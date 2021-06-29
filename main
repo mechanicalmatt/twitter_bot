@@ -20,6 +20,10 @@ api = tweepy.API(auth)
 # creating a "mentions" object
 mentions = api.mentions_timeline()
 
+# get all fields from this mention as dict keys
+for i in mentions[0].__dict__.keys():
+    print(i)
+
 # return mentions with associated user.id
 for i in mentions:
     print(str(i.id) + ' - ' + i.text)
